@@ -8,6 +8,12 @@ import type { NextConfig } from "next";
 
 
 const nextConfig: NextConfig = {
+
+    eslint: {
+    // Warning during builds will cause build to fail
+    ignoreDuringBuilds: false,
+  },
+  
   webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.node$/,

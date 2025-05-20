@@ -1,0 +1,181 @@
+/* SIDEBAR BASE */
+.custom-sidebar {
+    width: 260px;
+    background: linear-gradient(90deg, #e6f0fa, #cbe0f7)!important; /* Light blue gradient */
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.4s ease-in-out, background 0.4s !important;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08) !important;
+    z-index: 999 !important;
+    color: #fff;
+    transform: translateX(0);
+  }
+  
+  /* COLLAPSE STATE */
+  .custom-sidebar.collapsed {
+    width: 80px !important;
+  }
+  
+  /* SIDEBAR HEADER */
+  .custom-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    height: 70px;
+  }
+  
+  .custom-sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-sidebar-logo img {
+    max-height: 57px;
+    transition: transform .3s;
+    width: 159px;
+    margin-top: 19px;
+    margin-left: -11px;
+}
+  
+  /* SIDEBAR TOGGLE BUTTON */
+  .custom-sidebar-toggle .custom-toggle-btn {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.4rem;
+    transition: transform 0.3s;
+    margin-top: 25px
+  }
+  
+  .custom-sidebar-toggle .custom-toggle-btn:hover {
+    transform: rotate(90deg);
+  }
+  
+  /* MENU ITEMS */
+  .custom-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .custom-sidebar-menu-item {
+    transition: all 0.3s ease-in-out;
+    margin: 8px 0;
+    position: relative;
+  }
+  
+  /* Gradient Boxy Style and Hover Effect */
+  .custom-sidebar-menu-item a,
+  .custom-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  /* Gradient Background and Hover Effect */
+  .custom-sidebar-menu-item a:hover {
+    background: linear-gradient(270deg, #b2d0ed, #d4e9f6);   
+    color: #000; /* Black text on hover */
+    box-shadow: 0 4px 20px rgba(0, 132, 255, 0.2); /* Subtle box shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+    padding-left: 24px; /* Padding shift to enhance the boxy feel */
+  }
+  
+  /* Active State for Menu Item */
+  .custom-sidebar-menu-item.active a {
+    background: linear-gradient(270deg, #b2d0ed, #d4e9f6);    color: #000; /* Black text */
+    box-shadow: 0 4px 20px rgba(0, 132, 255, 0.1);
+  }
+  
+  /* Sidebar Text and Icon Transitions */
+  .custom-menu-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .custom-sidebar.collapsed .custom-menu-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-menu-text {
+    transition: all 0.3s ease;
+  }
+  
+  /* SIDEBAR FOOTER */
+  .custom-sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+  }
+  
+  .custom-logout-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .custom-logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #1e90ff; /* Hover to a soft blue */
+    transform: translateX(6px);
+  }
+  
+  /* Sidebar Animations */
+  .custom-sidebar-menu-item a,
+  .custom-logout-btn {
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .custom-sidebar .custom-sidebar-menu-item {
+    animation: slideIn 0.6s ease-in-out;
+    animation-delay: 0.3s;
+  }
+  
+  /* Animation for Collapse/Expand */
+  .custom-sidebar.collapsed .custom-sidebar-menu-item a {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  

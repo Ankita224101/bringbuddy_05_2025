@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import toast from "react-hot-toast";
-import '../../assets/styles/style.css';
 import { IoMailOutline, IoPersonCircleSharp } from "react-icons/io5";
 import { IoIosLock } from "react-icons/io";
 import { FaRegEyeSlash } from "react-icons/fa";
